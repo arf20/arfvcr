@@ -1,0 +1,94 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid 1571eb60-7765-4c4a-b768-7f648856a2e6)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 148.59 67.31) (size 38.1 39.37) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 49a7fac9-711f-46df-b688-4dafe1d964fc)
+    (property "Sheet name" "Video Audio Breakout" (id 0) (at 148.59 66.5984 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "video_audio_breakout.kicad_sch" (id 1) (at 148.59 107.2646 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet (at 62.23 68.58) (size 53.34 30.48) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid 834d0717-41cd-4bab-aebd-f5c97efeb728)
+    (property "Sheet name" "Power Control GPIO" (id 0) (at 62.23 67.8684 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "power_control_gpio.kicad_sch" (id 1) (at 62.23 99.6446 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc" (page "2"))
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728" (page "3"))
+  )
+
+  (symbol_instances
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/d0de83c0-3ca4-43d8-8c9c-825bfffa0ab0"
+      (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/df8dea3c-e576-4452-a87b-326c16fa79cf"
+      (reference "#PWR0102") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/c557f889-ce87-4d87-8e3e-4f57a6a89065"
+      (reference "#PWR0103") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/371e9d8e-0820-4c4b-93f2-a8705b83c546"
+      (reference "#PWR0104") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/52d8c29d-62fa-469d-a654-afbd4545a070"
+      (reference "#PWR0105") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/e5163dcd-8b9a-4641-b139-839c827387a1"
+      (reference "J0") (unit 1) (value "POWER_CONTROL_HEADER") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+    )
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/84d4e9de-6182-437e-a496-28dba39862f7"
+      (reference "J1") (unit 1) (value "Raspberry_Pi_2_3") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical")
+    )
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/e74959f5-656e-4ef3-87bc-cfac81e5cc42"
+      (reference "J2") (unit 1) (value "POWER_IN") (footprint "TerminalBlock:TerminalBlock_Altech_AK300-3_P5.00mm")
+    )
+    (path "/834d0717-41cd-4bab-aebd-f5c97efeb728/ad8a1b32-b1c0-4135-ae58-46e097f80308"
+      (reference "J3") (unit 1) (value "RPI_POWER_USB") (footprint "Connector_USB:USB_A_Molex_67643_Horizontal")
+    )
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc/074c699d-f09f-49d5-9dff-372ed92ec444"
+      (reference "J4") (unit 1) (value "VIDEO_HEADER") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+    )
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc/b3ac4499-ee11-4ecc-9e4b-db95dc2e6047"
+      (reference "J5") (unit 1) (value "AUDIO_HEADER") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+    )
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc/50cf90ce-6bf0-432a-af1e-787b00d2c849"
+      (reference "J6") (unit 1) (value "VIDEO_OUT") (footprint "arfvcr:CUI_RCJ-014")
+    )
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc/5e843e76-8127-4fa0-826c-7e0268cd8c3f"
+      (reference "J7") (unit 1) (value "VIDEO_IN") (footprint "arfvcr:CUI_RCJ-014")
+    )
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc/27b1c91e-8c9d-4390-a8f7-36194b7cd365"
+      (reference "J8") (unit 1) (value "AUDIO_OUT_L") (footprint "arfvcr:CUI_RCJ-014")
+    )
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc/14671aa6-e302-40ea-8c0b-2ff059e1ee06"
+      (reference "J9") (unit 1) (value "AUDIO_OUT_R") (footprint "arfvcr:CUI_RCJ-014")
+    )
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc/a89f020b-e0ca-4c28-8fed-7e186a861775"
+      (reference "J10") (unit 1) (value "AUDIO_IN_L") (footprint "arfvcr:CUI_RCJ-014")
+    )
+    (path "/49a7fac9-711f-46df-b688-4dafe1d964fc/ffda46cb-3270-404d-99cd-17d6e97c1efe"
+      (reference "J11") (unit 1) (value "AUDIO_IN_R") (footprint "arfvcr:CUI_RCJ-014")
+    )
+  )
+)
