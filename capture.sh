@@ -3,7 +3,7 @@
 v4l_dev=/dev/video0
 alsa_card=hw:CARD=DVC100,DEV=0
 
-output_path=Video
+output_path=~/Video
 
 fname=$(date +"%Y-%m-%d_%H-%M-%S").mkv
 
