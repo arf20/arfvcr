@@ -9,7 +9,7 @@
 
 #define PINSS	17
 
-#define FFMPEG      "ffmpeg"
+#define FFMPEG_BIN  "/usr/bin/ffmpeg"
 #define V4L_DEV     "/dev/video0"
 #define ALSA_CARD   "hw:CARD=DVC100,DEV=0"
 
@@ -35,12 +35,15 @@ tape_start() {
             tm.tm_hour, tm.tm_mon, tm.tm_sec);
         strcat(output, fname);
         /* ffmpeg -f alsa -ac 2 -ar 48000 -thread_queue_size 1024 -i $alsa_card -f v4l2 -i $v4l_dev -c:a pcm_s24le -c:v libx264 -b:v 2M -preset fast $output_dir/$fname */
-        char *args[] = { FFMPEG, "-f", "alsa", "-ac", "2", "-ar", "48000",
+        char *args[] = { FFMPEG_BIN, "-f", "alsa", "-ac", "2", "-ar", "48000",
             "-thread_queue_size", "1024", "-i", ALSA_CARD,
             "-f", "v4l2", V4L_DEV, "-c:a", "pcm_s24le", "-c:v", "libx264"
             "-b:v", "2M", "-preset", "fast", output, NULL };
 
-        execve(FFMPEG, args, NULL);
+        if (execve(FFMPEG_BIN, args, NULL) < 0) {
+            fprintf(stderr, "execve failed: %s\n", strerror(errno));
+            exit(1);
+        }
     } else {
         /* parent */
     }
