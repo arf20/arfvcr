@@ -52,7 +52,7 @@ tape_start() {
 void
 tape_end() {
     printf("TAPE STOP\n");
-    if (kill(-cid, SIGKILL) < 0) {
+    if (kill(-cid, SIGINT) < 0) {
         fprintf(stderr, "kill error: %s\n", strerror(errno));
     }
 }
