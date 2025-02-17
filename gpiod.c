@@ -13,6 +13,7 @@
 
 #define PINSS       17
 #define PINRECLED   27
+#define PINPWRBT    3
 
 #define FFMPEG_BIN  "/usr/bin/ffmpeg"
 #define V4L_DEV     "/dev/video0"
@@ -96,13 +97,24 @@ tape_end() {
     }
 }
 
+void
+shutdown()
+{
+    printf("SHUTDOWN\n");
+    system("poweroff");
+    exit(0);
+}
+
+
 int
 main(int argc, char **argv) {
     /* pin setup */
     wiringPiSetupGpio();
     pinMode(PINSS, INPUT);
+    pinMode(PINPWRBT, INPUT);
     pinMode(PINRECLED, OUTPUT);
     pullUpDnControl(PINSS, PUD_DOWN);
+    pullUpDnControl(PINPWRBT, PUD_UP);
 
     pthread_t tid;
     if (pthread_create(&tid, NULL, &monitor, NULL) != 0)
@@ -113,6 +125,8 @@ main(int argc, char **argv) {
     /* poll */
     int sss_ = 0, sss = 0;
     while (1) {
+        if (digitalRead(PINPWRBT) == 0)
+            shutdown();
         sss = digitalRead(PINSS);
         if (sss_ == 0 && sss == 1) {
             tape_start();
